@@ -1,0 +1,129 @@
+.content {
+  min-height: 200px;
+  display: flex;
+  flex-direction: column;
+}
+
+.inputStep,
+.errorStep {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.loadingStep {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 200px;
+}
+
+.description {
+  margin: 0;
+  font-size: 0.875rem;
+  color: var(--color-text-secondary);
+  line-height: 1.5;
+}
+
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-text);
+}
+
+.input {
+  padding: 0.75rem 1rem;
+  font-family: var(--font-family);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-text);
+  background: var(--color-surface);
+  border: 3px solid var(--color-black);
+  box-shadow: 4px 4px 0 var(--color-black);
+  border-radius: 8px;
+  outline: none;
+  transition: box-shadow 0.15s ease;
+}
+
+.input:focus {
+  box-shadow: 6px 6px 0 var(--color-primary);
+}
+
+.input::placeholder {
+  color: var(--color-text-secondary);
+  opacity: 0.6;
+}
+
+.actions {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: flex-end;
+  margin-top: auto;
+}
+
+.primaryButton,
+.secondaryButton {
+  padding: 0.75rem 1.5rem;
+  font-family: var(--font-family);
+  font-size: 0.875rem;
+  font-weight: 700;
+  border: 3px solid var(--color-black);
+  box-shadow: 4px 4px 0 var(--color-black);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.1s ease;
+}
+
+.primaryButton {
+  background: var(--color-primary);
+  color: var(--color-black);
+}
+
+.primaryButton:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 4px 6px 0 var(--color-black);
+}
+
+.primaryButton:active:not(:disabled) {
+  transform: translateY(0);
+  box-shadow: 2px 2px 0 var(--color-black);
+}
+
+.primaryButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.secondaryButton {
+  background: var(--color-surface);
+  color: var(--color-text);
+}
+
+.secondaryButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 4px 6px 0 var(--color-black);
+}
+
+.secondaryButton:active {
+  transform: translateY(0);
+  box-shadow: 2px 2px 0 var(--color-black);
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .actions {
+    flex-direction: column-reverse;
+  }
+
+  .actions button {
+    width: 100%;
+  }
+}

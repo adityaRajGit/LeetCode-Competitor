@@ -1,0 +1,119 @@
+.container {
+  width: 100%;
+  padding: 1rem;
+  background: var(--color-background);
+  border: 3px solid var(--color-border);
+  box-shadow: 6px 6px 0 var(--color-shadow);
+  border-radius: 0;
+}
+
+.title {
+  margin: 0 0 1rem 0;
+  font-size: 1.25rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  color: var(--color-text);
+  text-align: center;
+}
+
+.chartWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.svg {
+  display: block;
+  filter: drop-shadow(2px 2px 0 var(--color-border));
+}
+
+.segment {
+  transition: stroke-width 0.2s;
+  cursor: pointer;
+}
+
+.segment:hover {
+  stroke-width: 22;
+}
+
+.centerText {
+  fill: var(--color-text);
+  text-transform: uppercase;
+  pointer-events: none;
+}
+
+.legend {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  width: 100%;
+  max-width: 250px;
+}
+
+.legendItem {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem;
+  background: var(--color-surface);
+  border: 2px solid var(--color-border);
+}
+
+.legendColor {
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--color-border);
+  flex-shrink: 0;
+}
+
+.legendLabel {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-text-secondary);
+  flex: 1;
+}
+
+.legendLabel strong {
+  font-weight: 900;
+  color: var(--color-text);
+}
+
+.emptyState {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 200px;
+  border: 3px dashed var(--color-border);
+  background: var(--color-surface);
+}
+
+.emptyState p {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--color-text-secondary);
+  text-transform: uppercase;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .container {
+    padding: 0.75rem;
+  }
+
+  .title {
+    font-size: 1rem;
+  }
+
+  .chartWrapper {
+    gap: 1rem;
+  }
+
+  .legend {
+    max-width: 100%;
+  }
+
+  .legendLabel {
+    font-size: 0.75rem;
+  }
+}

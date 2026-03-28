@@ -1,0 +1,23 @@
+# Ignore build outputs
+dist
+build
+.vite
+
+# Ignore dependencies
+node_modules
+package-lock.json
+pnpm-lock.yaml
+yarn.lock
+
+# Ignore generated files
+coverage
+.cache
+
+# Ignore environment files
+.env
+.env.local
+.env.*.local
+
+# Ignore OS files
+.DS_Store
+Thumbs.db

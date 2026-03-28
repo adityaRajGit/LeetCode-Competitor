@@ -1,0 +1,196 @@
+.section {
+  width: 100%;
+  padding: 24px;
+  background: var(--neo-bg);
+}
+
+.header {
+  margin-bottom: 24px;
+}
+
+.title {
+  font-size: 28px;
+  font-weight: 700;
+  margin: 0 0 8px 0;
+  font-family: 'Space Mono', monospace;
+}
+
+.subtitle {
+  font-size: 16px;
+  color: var(--neo-text-muted);
+  margin: 0;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Card Titles */
+.cardTitle {
+  font-size: 20px;
+  font-weight: 700;
+  margin: 0 0 16px 0;
+  font-family: 'Space Mono', monospace;
+}
+
+/* Base Points Formula */
+.formula {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.formulaItem {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  background: var(--neo-bg);
+  border: 2px solid var(--neo-primary);
+  font-family: 'Space Mono', monospace;
+}
+
+.operator {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--neo-text-muted);
+}
+
+.value {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--neo-accent-blue);
+  min-width: 40px;
+  text-align: center;
+}
+
+.label {
+  font-size: 14px;
+  color: var(--neo-text-muted);
+}
+
+/* Bonuses */
+.bonuses {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.bonusItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 16px;
+  background: var(--neo-bg);
+  border: 2px solid var(--neo-primary);
+}
+
+.bonusIcon {
+  font-size: 36px;
+  flex-shrink: 0;
+}
+
+.bonusDetails {
+  flex: 1;
+}
+
+.bonusTitle {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 4px;
+  font-family: 'Space Mono', monospace;
+}
+
+.bonusValue {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--neo-accent-green);
+  margin-bottom: 8px;
+}
+
+.bonusDescription {
+  font-size: 14px;
+  color: var(--neo-text-muted);
+  line-height: 1.5;
+}
+
+/* Total Card */
+.totalCard {
+  background: rgba(255, 255, 0, 0.1);
+  border-width: 4px;
+}
+
+.totalFormula {
+  text-align: center;
+  padding: 16px;
+}
+
+.totalFormulaText {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  font-family: 'Space Mono', monospace;
+}
+
+.totalFormulaExample {
+  font-size: 16px;
+  color: var(--neo-text-muted);
+}
+
+/* Examples */
+.example {
+  margin-top: 12px;
+  padding: 12px;
+  background: rgba(0, 255, 0, 0.1);
+  border: 2px dashed var(--neo-success);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* Footer */
+.footer {
+  margin-top: 16px;
+  padding: 16px;
+  background: var(--neo-accent-yellow);
+  border: 3px solid var(--neo-primary);
+  box-shadow: 4px 4px 0 var(--neo-primary);
+}
+
+.footerNote {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--neo-primary);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .section {
+    padding: 16px;
+  }
+
+  .title {
+    font-size: 24px;
+  }
+
+  .cardTitle {
+    font-size: 18px;
+  }
+
+  .formulaItem {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .bonusItem {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .bonusIcon {
+    font-size: 32px;
+  }
+}

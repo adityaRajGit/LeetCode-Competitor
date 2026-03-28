@@ -1,0 +1,89 @@
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: var(--neo-z-modal);
+  animation: fadeIn 0.2s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.modal {
+  background: var(--neo-surface);
+  border: var(--neo-border-width-thick) solid var(--neo-border);
+  box-shadow: var(--neo-shadow-xl);
+  border-radius: var(--neo-radius-lg);
+  padding: var(--neo-space-xl);
+  max-width: 600px;
+  width: 90%;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  animation: slideUp 0.3s ease;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.closeButton {
+  position: absolute;
+  top: var(--neo-space-md);
+  right: var(--neo-space-md);
+  background: transparent;
+  border: none;
+  font-size: var(--neo-font-size-xl);
+  color: var(--neo-text);
+  cursor: pointer;
+  padding: var(--neo-space-xs);
+  line-height: 1;
+  transition: transform var(--neo-transition-fast);
+}
+
+.closeButton:hover {
+  transform: scale(1.2);
+}
+
+.title {
+  font-size: var(--neo-font-size-xl);
+  font-weight: var(--neo-font-weight-black);
+  color: var(--neo-text);
+  margin: 0 0 var(--neo-space-lg) 0;
+  padding-right: var(--neo-space-2xl);
+}
+
+.content {
+  color: var(--neo-text);
+}
+
+/* Responsive Design */
+@media (max-width: 640px) {
+  .modal {
+    width: 95%;
+    padding: var(--neo-space-lg);
+  }
+
+  .title {
+    font-size: var(--neo-font-size-lg);
+  }
+}

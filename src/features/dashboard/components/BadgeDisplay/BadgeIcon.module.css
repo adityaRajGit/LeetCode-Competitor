@@ -1,0 +1,142 @@
+/* BadgeIcon Component Styles */
+
+.badgeIcon {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-surface);
+  border: 3px solid var(--color-text);
+  box-shadow: 4px 4px 0 var(--color-text);
+  cursor: pointer;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.badgeIcon:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0 var(--color-text);
+}
+
+.icon {
+  font-size: inherit;
+  line-height: 1;
+}
+
+/* Sizes */
+.small {
+  width: 28px;
+  height: 28px;
+  font-size: 14px;
+  border-width: 2px;
+  box-shadow: 2px 2px 0 var(--color-text);
+}
+
+.small:hover {
+  transform: translate(-1px, -1px);
+  box-shadow: 3px 3px 0 var(--color-text);
+}
+
+.medium {
+  width: 40px;
+  height: 40px;
+  font-size: 20px;
+}
+
+.large {
+  width: 56px;
+  height: 56px;
+  font-size: 28px;
+}
+
+/* Tooltip */
+.tooltip {
+  position: absolute;
+  bottom: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%);
+  min-width: 200px;
+  max-width: 300px;
+  padding: 12px;
+  background: var(--color-surface);
+  border: 3px solid var(--color-text);
+  box-shadow: 4px 4px 0 var(--color-text);
+  z-index: 1000;
+  pointer-events: none;
+  animation: tooltipFadeIn 0.2s ease;
+}
+
+@keyframes tooltipFadeIn {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+.tooltipTitle {
+  font-weight: 700;
+  font-size: 14px;
+  margin-bottom: 4px;
+  color: var(--color-text);
+}
+
+.tooltipDescription {
+  font-size: 12px;
+  color: var(--color-text-secondary);
+  margin-bottom: 6px;
+}
+
+.tooltipDate {
+  font-size: 11px;
+  color: var(--color-text-muted);
+  font-style: italic;
+}
+
+/* Arrow for tooltip */
+.tooltip::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-top: 8px solid var(--color-text);
+}
+
+/* Dark mode adjustments */
+[data-theme='dark'] .badgeIcon {
+  background: var(--color-surface-dark);
+}
+
+[data-theme='dark'] .tooltip {
+  background: var(--color-surface-dark);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .tooltip {
+    min-width: 150px;
+    max-width: 200px;
+    padding: 8px;
+  }
+
+  .tooltipTitle {
+    font-size: 12px;
+  }
+
+  .tooltipDescription {
+    font-size: 11px;
+  }
+
+  .tooltipDate {
+    font-size: 10px;
+  }
+}

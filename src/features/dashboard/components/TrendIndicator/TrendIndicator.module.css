@@ -1,0 +1,44 @@
+.indicator {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 900;
+  line-height: 1;
+}
+
+.up {
+  color: var(--color-success);
+  animation: bounce 0.6s ease-in-out;
+}
+
+.down {
+  color: var(--color-error);
+  animation: bounce 0.6s ease-in-out;
+}
+
+.stable {
+  color: var(--color-text-secondary);
+  opacity: 0.5;
+}
+
+/* Size variants */
+.small {
+  font-size: 0.75rem;
+}
+
+.medium {
+  font-size: 1rem;
+}
+
+.large {
+  font-size: 1.25rem;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.3);
+  }
+}

@@ -1,0 +1,123 @@
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-family: var(--font-family);
+  user-select: none;
+}
+
+.interactive {
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.interactive:hover {
+  transform: translateY(-2px);
+}
+
+.interactive:active {
+  transform: translateY(0);
+}
+
+.iconContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-primary);
+  border: 3px solid var(--color-black);
+  box-shadow: 4px 4px 0 var(--color-black);
+  border-radius: 8px;
+  padding: 0.5rem;
+}
+
+.icon {
+  font-size: 1.5rem;
+  line-height: 1;
+  display: block;
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.title {
+  font-size: 1.25rem;
+  font-weight: 800;
+  line-height: 1.2;
+  margin: 0;
+  color: var(--color-text);
+}
+
+.subtitle {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-text-secondary);
+}
+
+/* Size variants */
+.small .iconContainer {
+  padding: 0.375rem;
+  border-width: 2px;
+  box-shadow: 2px 2px 0 var(--color-black);
+}
+
+.small .icon {
+  font-size: 1rem;
+}
+
+.small .title {
+  font-size: 1rem;
+}
+
+.small .subtitle {
+  font-size: 0.625rem;
+}
+
+.medium .iconContainer {
+  padding: 0.5rem;
+}
+
+.medium .icon {
+  font-size: 1.5rem;
+}
+
+.medium .title {
+  font-size: 1.25rem;
+}
+
+.medium .subtitle {
+  font-size: 0.75rem;
+}
+
+.large .iconContainer {
+  padding: 0.75rem;
+  border-width: 4px;
+  box-shadow: 6px 6px 0 var(--color-black);
+}
+
+.large .icon {
+  font-size: 2rem;
+}
+
+.large .title {
+  font-size: 1.75rem;
+}
+
+.large .subtitle {
+  font-size: 0.875rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .logo {
+    gap: 0.5rem;
+  }
+
+  .text {
+    display: none;
+  }
+}

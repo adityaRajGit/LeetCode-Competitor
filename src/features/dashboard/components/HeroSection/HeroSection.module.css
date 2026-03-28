@@ -1,0 +1,125 @@
+.section {
+  margin-bottom: var(--neo-space-2xl);
+}
+
+.warningBanner {
+  background: var(--neo-warning);
+  color: var(--neo-primary);
+  padding: var(--neo-space-md);
+  border: var(--neo-border-width) solid var(--neo-border);
+  border-radius: var(--neo-radius-md);
+  margin-bottom: var(--neo-space-lg);
+  font-weight: var(--neo-font-weight-medium);
+  text-align: center;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: var(--neo-space-xl);
+  gap: var(--neo-space-lg);
+}
+
+.titleGroup {
+  flex: 1;
+}
+
+.title {
+  font-size: var(--neo-font-size-3xl);
+  font-weight: var(--neo-font-weight-black);
+  color: var(--neo-text);
+  margin: 0 0 var(--neo-space-xs) 0;
+  line-height: 1.2;
+}
+
+.username {
+  font-size: var(--neo-font-size-lg);
+  color: var(--neo-text-muted);
+  font-weight: var(--neo-font-weight-medium);
+  margin: 0;
+}
+
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: var(--neo-space-lg);
+  margin-bottom: var(--neo-space-lg);
+}
+
+.statsGrid .neo-card {
+  text-align: center;
+  padding: var(--neo-space-xl);
+}
+
+.statLabel {
+  font-size: var(--neo-font-size-sm);
+  font-weight: var(--neo-font-weight-bold);
+  color: var(--neo-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: var(--neo-space-sm);
+}
+
+.statValue {
+  font-size: var(--neo-font-size-3xl);
+  font-weight: var(--neo-font-weight-black);
+  color: var(--neo-text);
+  line-height: 1.2;
+  margin-bottom: var(--neo-space-xs);
+}
+
+.statSubtext {
+  font-size: var(--neo-font-size-sm);
+  color: var(--neo-text-muted);
+  display: flex;
+  gap: var(--neo-space-xs);
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.difficultyBadge {
+  font-size: 10px;
+  padding: 2px 6px;
+}
+
+.comparisonHint {
+  background: var(--neo-accent-blue);
+  color: var(--neo-secondary);
+  padding: var(--neo-space-md);
+  border: var(--neo-border-width) solid var(--neo-border);
+  border-radius: var(--neo-radius-md);
+  text-align: center;
+  font-weight: var(--neo-font-weight-medium);
+}
+
+.badgesSection {
+  margin-top: var(--neo-space-xl);
+  margin-bottom: var(--neo-space-xl);
+  padding: var(--neo-space-lg);
+  background: var(--neo-surface-secondary);
+  border: var(--neo-border-width) solid var(--neo-border);
+  border-radius: var(--neo-radius-lg);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .title {
+    font-size: var(--neo-font-size-2xl);
+  }
+
+  .statsGrid {
+    grid-template-columns: 1fr;
+    gap: var(--neo-space-md);
+  }
+
+  .statValue {
+    font-size: var(--neo-font-size-2xl);
+  }
+}

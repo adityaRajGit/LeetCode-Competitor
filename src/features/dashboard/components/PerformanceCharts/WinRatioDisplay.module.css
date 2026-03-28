@@ -1,0 +1,140 @@
+.container {
+  width: 100%;
+}
+
+.card {
+  padding: 1.5rem;
+  background: var(--color-background);
+  border: 3px solid var(--color-border);
+  box-shadow: 6px 6px 0 var(--color-shadow);
+}
+
+.title {
+  margin: 0 0 1.5rem 0;
+  font-size: 1.25rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  color: var(--color-text);
+  text-align: center;
+}
+
+.ratioBar {
+  display: flex;
+  width: 100%;
+  height: 60px;
+  border: 3px solid var(--color-border);
+  overflow: hidden;
+}
+
+.winSegment,
+.lossSegment {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  transition: all 0.3s;
+  position: relative;
+}
+
+.winSegment {
+  background: var(--color-info, #3b82f6);
+}
+
+.lossSegment {
+  background: var(--color-text-secondary);
+}
+
+.winSegment.winning {
+  background: var(--color-success, #10b981);
+}
+
+.lossSegment.winning {
+  background: var(--color-danger, #ef4444);
+}
+
+.segmentLabel {
+  font-size: 1.125rem;
+  font-weight: 900;
+  color: white;
+  text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.3);
+}
+
+.labels {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 0.5rem;
+  padding: 0 0.5rem;
+}
+
+.youLabel,
+.themLabel {
+  font-size: 0.875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--color-text-secondary);
+}
+
+.verdict {
+  margin-top: 1rem;
+  padding: 1rem;
+  background: var(--color-surface);
+  border: 2px solid var(--color-border);
+  text-align: center;
+}
+
+.verdict p {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.verdictWin {
+  color: var(--color-success, #10b981);
+}
+
+.verdictLoss {
+  color: var(--color-danger, #ef4444);
+}
+
+.verdictTie {
+  color: var(--color-warning, #f59e0b);
+}
+
+.emptyState {
+  padding: 2rem;
+  text-align: center;
+  border: 3px dashed var(--color-border);
+  background: var(--color-surface);
+}
+
+.emptyState p {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--color-text-secondary);
+  text-transform: uppercase;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .card {
+    padding: 1rem;
+  }
+
+  .title {
+    font-size: 1rem;
+  }
+
+  .ratioBar {
+    height: 50px;
+  }
+
+  .segmentLabel {
+    font-size: 0.875rem;
+  }
+
+  .verdict p {
+    font-size: 0.875rem;
+  }
+}
