@@ -1,0 +1,96 @@
+.item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 16px;
+  background: var(--neo-surface);
+  border: 3px solid var(--neo-primary);
+  box-shadow: 4px 4px 0 var(--neo-primary);
+  margin-bottom: 12px;
+  transition: transform 0.1s ease;
+}
+
+.item:hover {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0 var(--neo-primary);
+}
+
+.item:last-child {
+  margin-bottom: 0;
+}
+
+.icon {
+  font-size: 24px;
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.message {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--neo-text);
+  line-height: 1.5;
+}
+
+.timestamp {
+  font-size: 12px;
+  color: var(--neo-text-muted);
+  font-family: 'Space Mono', monospace;
+}
+
+/* Event Type Variants */
+.problems_solved {
+  border-left: 6px solid var(--neo-success);
+}
+
+.streak_broken {
+  border-left: 6px solid var(--neo-error);
+}
+
+.streak_milestone {
+  border-left: 6px solid var(--neo-warning);
+  background: rgba(255, 170, 0, 0.05);
+}
+
+.rank_changed {
+  border-left: 6px solid var(--neo-info);
+}
+
+.achievement_unlocked {
+  border-left: 6px solid var(--neo-accent-yellow);
+  background: rgba(255, 255, 0, 0.05);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .item {
+    padding: 12px;
+    gap: 8px;
+  }
+
+  .icon {
+    font-size: 20px;
+    width: 24px;
+    height: 24px;
+  }
+
+  .message {
+    font-size: 13px;
+  }
+
+  .timestamp {
+    font-size: 11px;
+  }
+}

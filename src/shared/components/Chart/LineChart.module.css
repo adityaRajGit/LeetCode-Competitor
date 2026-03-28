@@ -1,0 +1,120 @@
+.container {
+  width: 100%;
+  padding: 1rem;
+  background: var(--color-background);
+  border: 3px solid var(--color-border);
+  box-shadow: 6px 6px 0 var(--color-shadow);
+  border-radius: 0;
+}
+
+.title {
+  margin: 0 0 1rem 0;
+  font-size: 1.25rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  color: var(--color-text);
+}
+
+.chartWrapper {
+  position: relative;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.line {
+  transition: stroke-width 0.2s;
+}
+
+.line:hover {
+  stroke-width: 3;
+}
+
+.point {
+  transition: r 0.2s;
+  cursor: pointer;
+}
+
+.point:hover {
+  r: 2.5;
+}
+
+.gridLines line {
+  stroke-dasharray: 2, 2;
+}
+
+.labels {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.xAxis {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 1rem;
+}
+
+.xLabel {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--color-text-secondary);
+  text-align: center;
+}
+
+.axisLabel {
+  text-align: center;
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--color-text-secondary);
+  margin: 0.5rem 0 0 0;
+  text-transform: uppercase;
+}
+
+.yAxisLabel {
+  position: absolute;
+  left: -2rem;
+  top: 50%;
+  transform: translateY(-50%) rotate(-90deg);
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--color-text-secondary);
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.emptyState {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 200px;
+  border: 3px dashed var(--color-border);
+  background: var(--color-surface);
+}
+
+.emptyState p {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--color-text-secondary);
+  text-transform: uppercase;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .container {
+    padding: 0.75rem;
+  }
+
+  .title {
+    font-size: 1rem;
+  }
+
+  .xLabel {
+    font-size: 0.625rem;
+  }
+}

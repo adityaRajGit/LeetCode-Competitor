@@ -1,0 +1,142 @@
+.dropdown {
+  position: relative;
+}
+
+.trigger {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  background: var(--color-surface);
+  border: 3px solid var(--color-black);
+  box-shadow: 4px 4px 0 var(--color-black);
+  border-radius: 8px;
+  cursor: pointer;
+  font-family: var(--font-family);
+  font-size: 0.875rem;
+  font-weight: 700;
+  transition: transform 0.1s ease;
+}
+
+.trigger:hover {
+  transform: translateY(-2px);
+  box-shadow: 4px 6px 0 var(--color-black);
+}
+
+.trigger:active {
+  transform: translateY(0);
+  box-shadow: 2px 2px 0 var(--color-black);
+}
+
+.avatar {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  background: var(--color-primary);
+  border: 2px solid var(--color-black);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 1rem;
+  color: var(--color-black);
+}
+
+.username {
+  max-width: 120px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: var(--color-text);
+}
+
+.chevron {
+  font-size: 0.625rem;
+  color: var(--color-text-secondary);
+}
+
+.menu {
+  position: absolute;
+  top: calc(100% + 0.5rem);
+  right: 0;
+  min-width: 200px;
+  background: var(--color-surface);
+  border: 3px solid var(--color-black);
+  box-shadow: 6px 6px 0 var(--color-black);
+  border-radius: 8px;
+  padding: 0.5rem;
+  z-index: 1000;
+  animation: slideDown 0.2s ease;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.menuItem {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  width: 100%;
+  padding: 0.75rem;
+  background: transparent;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-family: var(--font-family);
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-text);
+  text-align: left;
+  transition: background-color 0.15s ease;
+}
+
+.menuItem:hover {
+  background: var(--color-hover);
+}
+
+.menuItem:active {
+  background: var(--color-active);
+}
+
+.menuIcon {
+  font-size: 1.125rem;
+  line-height: 1;
+}
+
+.divider {
+  height: 2px;
+  background: var(--color-border);
+  margin: 0.5rem 0;
+}
+
+.danger {
+  color: var(--color-error);
+}
+
+.danger:hover {
+  background: var(--color-error-light);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .username {
+    display: none;
+  }
+
+  .trigger {
+    padding: 0.5rem;
+  }
+
+  .menu {
+    right: auto;
+    left: 0;
+  }
+}

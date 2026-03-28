@@ -1,0 +1,158 @@
+/* ErrorBoundary Component Styles */
+
+.container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  background: var(--color-background);
+}
+
+.card {
+  max-width: 600px;
+  width: 100%;
+  padding: 3rem;
+  background: var(--color-surface);
+  border: 4px solid var(--color-text);
+  box-shadow: 8px 8px 0 var(--color-text);
+  text-align: center;
+}
+
+.icon {
+  font-size: 4rem;
+  margin-bottom: 1.5rem;
+  animation: shake 0.5s ease-in-out;
+}
+
+@keyframes shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    transform: translateX(-10px);
+  }
+  20%,
+  40%,
+  60%,
+  80% {
+    transform: translateX(10px);
+  }
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--color-text);
+  margin: 0 0 1rem 0;
+}
+
+.message {
+  font-size: 1rem;
+  color: var(--color-text-secondary);
+  margin: 0 0 2rem 0;
+  line-height: 1.5;
+}
+
+.details {
+  text-align: left;
+  margin: 2rem 0;
+  padding: 1rem;
+  background: var(--color-surface-secondary);
+  border: 2px solid var(--color-border);
+  border-radius: 4px;
+}
+
+.detailsSummary {
+  font-weight: 700;
+  cursor: pointer;
+  user-select: none;
+  color: var(--color-text);
+  margin-bottom: 0.5rem;
+}
+
+.detailsSummary:hover {
+  color: var(--color-primary);
+}
+
+.errorText {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 0.875rem;
+  color: var(--color-error);
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  overflow-x: auto;
+  margin: 0;
+  padding: 0.5rem;
+}
+
+.resetButton,
+.reloadButton {
+  padding: 0.75rem 2rem;
+  font-size: 1rem;
+  font-weight: 700;
+  border: 3px solid var(--color-text);
+  background: var(--color-primary);
+  color: var(--color-text);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.resetButton:hover,
+.reloadButton:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 4px 4px 0 var(--color-text);
+}
+
+.resetButton:active,
+.reloadButton:active {
+  transform: translate(0, 0);
+  box-shadow: 2px 2px 0 var(--color-text);
+}
+
+.reloadButton {
+  background: var(--color-secondary);
+}
+
+/* Dark mode */
+[data-theme='dark'] .card {
+  background: var(--color-surface-dark);
+}
+
+[data-theme='dark'] .details {
+  background: var(--color-background);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .container {
+    padding: 1rem;
+  }
+
+  .card {
+    padding: 2rem 1.5rem;
+  }
+
+  .title {
+    font-size: 1.5rem;
+  }
+
+  .icon {
+    font-size: 3rem;
+  }
+
+  .resetButton,
+  .reloadButton {
+    display: block;
+    width: 100%;
+    margin: 0.5rem 0;
+  }
+}

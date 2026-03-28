@@ -1,0 +1,66 @@
+.container {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--neo-space-sm);
+  padding: var(--neo-space-sm) var(--neo-space-md);
+  background: var(--neo-surface);
+  border: var(--neo-border-width) solid var(--neo-border);
+  border-radius: var(--neo-radius-md);
+  box-shadow: var(--neo-shadow-sm);
+}
+
+.icon {
+  font-size: var(--neo-font-size-2xl);
+  line-height: 1;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.number {
+  font-size: var(--neo-font-size-xl);
+  font-weight: var(--neo-font-weight-black);
+  color: var(--neo-text);
+  line-height: 1;
+}
+
+.label {
+  font-size: var(--neo-font-size-xs);
+  color: var(--neo-text-muted);
+  font-weight: var(--neo-font-weight-medium);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Size Variants */
+.small .icon {
+  font-size: var(--neo-font-size-lg);
+}
+
+.small .number {
+  font-size: var(--neo-font-size-base);
+}
+
+.small .label {
+  font-size: 10px;
+}
+
+.medium {
+  /* Default size - inherits base styles */
+  gap: var(--neo-space-sm);
+}
+
+.large .icon {
+  font-size: var(--neo-font-size-3xl);
+}
+
+.large .number {
+  font-size: var(--neo-font-size-2xl);
+}
+
+.large .label {
+  font-size: var(--neo-font-size-sm);
+}

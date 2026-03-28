@@ -1,0 +1,35 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--neo-space-md);
+  padding: var(--neo-space-xl);
+  background: var(--neo-surface);
+  border: var(--neo-border-width) solid var(--neo-error);
+  border-radius: var(--neo-radius-md);
+  box-shadow: var(--neo-shadow-sm);
+}
+
+.icon {
+  font-size: var(--neo-font-size-3xl);
+}
+
+.message {
+  font-size: var(--neo-font-size-base);
+  color: var(--neo-text);
+  font-weight: var(--neo-font-weight-medium);
+  text-align: center;
+  margin: 0;
+  max-width: 400px;
+}
+
+.actions {
+  display: flex;
+  gap: var(--neo-space-sm);
+  margin-top: var(--neo-space-sm);
+}
+
+.button {
+  min-width: 100px;
+}
