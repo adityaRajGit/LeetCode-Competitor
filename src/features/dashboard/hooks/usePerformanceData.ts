@@ -41,19 +41,19 @@ export const usePerformanceData = ({
   friendTotalSolved,
 }: UsePerformanceDataProps): PerformanceData => {
   return useMemo(() => {
-    // Get current date at midnight UTC
+    // Get current date at midnight UTC to match LeetCode API timestamp keys
     const now = new Date();
-    now.setHours(0, 0, 0, 0);
+    now.setUTCHours(0, 0, 0, 0);
 
     // Calculate daily trend (last 30 days)
     const dailyTrend: Array<{ label: string; value: number }> = [];
     for (let i = 29; i >= 0; i--) {
       const date = new Date(now);
-      date.setDate(date.getDate() - i);
+      date.setUTCDate(date.getUTCDate() - i);
       const timestamp = Math.floor(date.getTime() / 1000).toString();
 
       const value = submissionCalendar[timestamp] || 0;
-      const label = date.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+      const label = date.toLocaleDateString('en-US', { month: 'short', day: 'numeric', timeZone: 'UTC' });
 
       dailyTrend.push({ label, value });
     }
@@ -64,12 +64,12 @@ export const usePerformanceData = ({
 
     for (let i = 0; i < 7; i++) {
       const thisWeekDate = new Date(now);
-      thisWeekDate.setDate(thisWeekDate.getDate() - i);
+      thisWeekDate.setUTCDate(thisWeekDate.getUTCDate() - i);
       const thisWeekTimestamp = Math.floor(thisWeekDate.getTime() / 1000).toString();
       thisWeek += submissionCalendar[thisWeekTimestamp] || 0;
 
       const lastWeekDate = new Date(now);
-      lastWeekDate.setDate(lastWeekDate.getDate() - (i + 7));
+      lastWeekDate.setUTCDate(lastWeekDate.getUTCDate() - (i + 7));
       const lastWeekTimestamp = Math.floor(lastWeekDate.getTime() / 1000).toString();
       lastWeek += submissionCalendar[lastWeekTimestamp] || 0;
     }

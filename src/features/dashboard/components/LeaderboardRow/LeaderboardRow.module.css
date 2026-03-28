@@ -1,7 +1,7 @@
 .row {
   display: grid;
-  grid-template-columns: auto auto 1fr auto auto;
-  gap: 1rem;
+  grid-template-columns: auto auto 1fr auto auto auto;
+  gap: 0.75rem;
   padding: 1rem;
   background: var(--color-surface);
   border: 3px solid var(--color-black);
@@ -11,6 +11,7 @@
   transition:
     transform 0.2s ease,
     box-shadow 0.2s ease;
+  overflow: hidden;
 }
 
 .row:hover {
@@ -127,15 +128,17 @@
 
 .stats {
   display: flex;
-  gap: 1rem;
-  flex-wrap: wrap;
+  gap: 0.75rem;
+  flex-wrap: nowrap;
+  overflow-x: auto;
 }
 
 .stat {
   display: flex;
   flex-direction: column;
   gap: 0.125rem;
-  min-width: 3rem;
+  min-width: 2.5rem;
+  flex-shrink: 0;
 }
 
 .statLabel {
@@ -211,8 +214,8 @@
 /* Responsive */
 @media (max-width: 1024px) {
   .row {
-    grid-template-columns: auto 1fr auto;
-    gap: 0.75rem;
+    grid-template-columns: auto auto 1fr auto auto;
+    gap: 0.5rem;
   }
 
   .trend {
@@ -220,19 +223,31 @@
   }
 
   .stats {
-    gap: 0.75rem;
+    gap: 0.5rem;
   }
 
   .stat {
-    min-width: 2.5rem;
+    min-width: 2rem;
+  }
+
+  .statLabel {
+    font-size: 0.5625rem;
+  }
+
+  .statValue {
+    font-size: 0.75rem;
   }
 }
 
 @media (max-width: 768px) {
   .row {
-    grid-template-columns: auto 1fr auto;
+    grid-template-columns: auto 1fr auto auto;
     gap: 0.5rem;
     padding: 0.75rem;
+  }
+
+  .trend {
+    display: none;
   }
 
   .stats {
