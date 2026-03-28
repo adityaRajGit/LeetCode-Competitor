@@ -7,11 +7,11 @@ import { SubmissionCalendar } from '@/features/dashboard/types';
 
 /**
  * Get the start of today in Unix timestamp (seconds)
- * Normalized to start of day (00:00:00) in user's timezone
+ * Normalized to start of day (00:00:00) in UTC to match LeetCode API timestamps
  */
 export function getStartOfToday(): number {
   const now = new Date();
-  now.setHours(0, 0, 0, 0);
+  now.setUTCHours(0, 0, 0, 0);
   return Math.floor(now.getTime() / 1000);
 }
 

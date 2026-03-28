@@ -26,6 +26,9 @@ const LineChartComponent: React.FC<LineChartProps> = ({
   yAxisLabel,
   xAxisLabel,
 }) => {
+  // Use a wider SVG coordinate space so data points are properly spaced
+  const svgWidth = 800;
+
   // Memoize chart calculations
   const chartData = useMemo(() => {
     if (!data || data.length === 0) {
@@ -39,8 +42,8 @@ const LineChartComponent: React.FC<LineChartProps> = ({
     const range = maxValue - minValue || 1;
 
     // Calculate points for the polyline
-    const padding = 20;
-    const chartWidth = 100 - padding * 2;
+    const padding = 40;
+    const chartWidth = svgWidth - padding * 2;
     const chartHeight = height - padding * 2;
     const stepX = chartWidth / (data.length - 1 || 1);
 
@@ -81,8 +84,8 @@ const LineChartComponent: React.FC<LineChartProps> = ({
 
       <div className={styles.chartWrapper}>
         <svg
-          viewBox={`0 0 100 ${height}`}
-          preserveAspectRatio="none"
+          viewBox={`0 0 ${svgWidth} ${height}`}
+          preserveAspectRatio="xMidYMid meet"
           className={styles.svg}
           role="img"
           aria-label={title || 'Line chart'}
@@ -94,21 +97,28 @@ const LineChartComponent: React.FC<LineChartProps> = ({
                 key={y}
                 x1={padding}
                 y1={(y * height) / 100}
-                x2={100 - padding}
+                x2={svgWidth - padding}
                 y2={(y * height) / 100}
                 stroke="var(--color-border)"
-                strokeWidth="0.2"
+                strokeWidth="1"
                 opacity="0.3"
               />
             ))}
           </g>
+
+          {/* Area fill under line */}
+          <polygon
+            points={`${padding},${height - padding} ${points} ${padding + stepX * (data.length - 1)},${height - padding}`}
+            fill={color}
+            opacity="0.1"
+          />
 
           {/* Line */}
           <polyline
             points={points}
             fill="none"
             stroke={color}
-            strokeWidth="2"
+            strokeWidth="3"
             strokeLinecap="round"
             strokeLinejoin="round"
             className={styles.line}
@@ -122,7 +132,7 @@ const LineChartComponent: React.FC<LineChartProps> = ({
 
             return (
               <g key={index}>
-                <circle cx={x} cy={y} r="1.5" fill={color} className={styles.point} />
+                <circle cx={x} cy={y} r="4" fill={color} className={styles.point} />
                 <title>{`${point.label}: ${point.value}`}</title>
               </g>
             );

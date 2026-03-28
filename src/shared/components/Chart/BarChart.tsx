@@ -49,19 +49,22 @@ export const BarChart: React.FC<BarChartProps> = ({
         <div className={styles.barsContainer}>
           {data.map((item, index) => {
             const barHeight = (item.value / maxValue) * 100;
+            // Show a minimum bar height so 0-value bars are still visible
+            const displayHeight = item.value === 0 ? 2 : barHeight;
             const barColor = item.color || 'var(--color-primary)';
 
             return (
               <div key={index} className={styles.barWrapper}>
                 <div className={styles.barColumn}>
-                  {showValues && item.value > 0 && (
+                  {showValues && (
                     <span className={styles.valueLabel}>{item.value}</span>
                   )}
                   <div
                     className={styles.bar}
                     style={{
-                      height: `${barHeight}%`,
+                      height: `${displayHeight}%`,
                       backgroundColor: barColor,
+                      opacity: item.value === 0 ? 0.3 : 1,
                     }}
                     role="img"
                     aria-label={`${item.label}: ${item.value}`}
