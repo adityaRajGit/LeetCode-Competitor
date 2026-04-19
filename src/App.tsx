@@ -3,11 +3,10 @@ import { AppRouter } from './core/router'
 import { useTheme } from './shared/hooks/useTheme'
 
 function App() {
-  // Initialize theme system
   useTheme();
 
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/LeetCode-Competitor">
       <AppRouter />
     </BrowserRouter>
   )
