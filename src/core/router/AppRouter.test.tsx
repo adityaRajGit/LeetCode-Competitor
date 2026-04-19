@@ -30,6 +30,7 @@ describe('AppRouter', () => {
       </MemoryRouter>
     )
     expect(screen.getByTestId('dashboard')).toBeInTheDocument()
+    expect(screen.queryByTestId('welcome')).not.toBeInTheDocument()
   })
 
   it('renders WelcomeScreen at /welcome', () => {
